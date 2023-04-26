@@ -12,6 +12,7 @@ function changeTimer() {
   else {
     clearTimeout(timerId);
     alert('Вы победили в конкурсе!');
+    location.assign('https://www.youtube.com/shorts/EFwPdzM8u9s');
   }
 }
 
