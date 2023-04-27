@@ -12,12 +12,8 @@ function changeSizeAndCounters() {
   }
   momentOfClick = Date.now();
 
-  if(cookie.width === 200) {
-    cookie.width = 250;
-  }
-  else {
-    cookie.width = 200;
-  }
+  cookie.width = clickCounter.textContent % 2 ? 200: 250;
+
   +clickCounter.textContent++;
 }
 

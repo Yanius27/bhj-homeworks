@@ -1,13 +1,15 @@
-let timer = document.getElementById('timer');
-let preTimer = document.getElementById('pre-timer');
+let seconds = document.getElementById('seconds');
+let minutes = document.getElementById('minutes');
+let hours = document.getElementById('hours');
+let time = new Date(2023, 3, 27, 0, 0, 59);
+
+seconds.textContent = time.getSeconds();
+minutes.textContent = time.getMinutes();
+hours.textContent = time.getHours();
 
 function changeTimer() {
-  if(+timer.textContent < 11 && +timer.textContent != 0) {
-    preTimer.textContent = ' 00:00:0';
-  }
-
-  if(+timer.textContent > 0) {
-    +timer.textContent--;
+  if(seconds.textContent > 0) {
+    seconds.textContent--;
   }
   else {
     clearTimeout(timerId);
