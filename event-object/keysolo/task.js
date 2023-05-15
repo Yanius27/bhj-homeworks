@@ -18,7 +18,7 @@ class Game {
       this.timerSpan.textContent -= 1;
       if(+this.timerSpan.textContent < 0) {
         clearInterval(this.counting);
-        this.setNewWord();
+        this.fail();
       }
     }, 1000); 
   } 
