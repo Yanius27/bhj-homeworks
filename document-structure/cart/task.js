@@ -1,24 +1,36 @@
 const products = Array.from(document.querySelectorAll('.product'));
 const cartProducts = document.querySelector('.cart__products');
 
+const cartProduct = document.createElement('div');
+cartProduct.classList.add('cart__product');
+
+const cartProductsArr = Array.from(document.querySelectorAll('.cart__product'));
+
+const cartProductImg = document.createElement('img');
+cartProductImg.classList.add('cart__product-image');
+
+const cartProductQuantity = document.createElement('div');
+cartProductQuantity.classList.add('cart__product-count');
+
+
 function pushInСart(product, quantity) {
-  const cartProduct = document.createElement('div');
-  cartProduct.classList.add('cart__product');
-  if(!cartProducts.contains()) {
-    cartProducts.appendChild(cartProduct);
+  if(!cartProductsArr.find((e) => e.dataset.id === product.dataset.id)) {
     cartProduct.dataset.id = product.dataset.id;
 
-    const cartProductImage = document.createElement('img');
-    cartProductImage.src = product.querySelector('img').src;
-    cartProductImage.classList.add('cart__product-image');
-    cartProduct.appendChild(cartProductImage);
+    cartProductImg.src = product.querySelector('img').src;
+    cartProduct.appendChild(cartProductImg);
 
-    const cartProductQuantity = document.createElement('div');
     cartProductQuantity.innerText = quantity.innerText;
-    cartProductQuantity.classList.add('cart__product-count');
     cartProduct.appendChild(cartProductQuantity);
+
+    cartProducts.appendChild(cartProduct);
+
+    console.log('!');
+    cartProductsArr.push(product); 
   }
-  
+  else {
+    cartProductQuantity.innerText = +cartProductQuantity.innerText + +quantity.innerText;
+  }  
 }
 
 products.forEach((elem) => {
