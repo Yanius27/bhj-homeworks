@@ -67,6 +67,7 @@ button {
 .task__remove {
   color: red;
   font-size: 30px;
+  font-weight: bolder;
   text-decoration: none;
   cursor: pointer;
 }
