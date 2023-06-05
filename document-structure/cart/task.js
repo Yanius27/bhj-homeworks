@@ -50,27 +50,6 @@ function pushInСart(product, quantity) {
    const count = +cartProductQuantity.innerText;
    cartProductQuantity.innerText = count + productQuantity;
 //change quantity of products in cart
-
-  //    const productImgCopy = product.querySelector('img').cloneNode(false);
-  //    productImgCopy.classList.add('product__image-copy');
-  //    product.appendChild(productImgCopy);
-  // *//create copy of image for animation
-  //    const productImgCopyPosition = productImgCopy.getBoundingClientRect();
-  //    const cartProductImgPosition = cartProductImg.getBoundingClientRect();
-   
-  //    let yDifference = productImgCopyPosition.y - cartProductImgPosition.y;
-  //    let xDifference = productImgCopyPosition.x - cartProductImgPosition.x;
-   
-  //    console.log(productImgCopyPosition, cartProductImgPosition);
-   
-  //    let countInterval = 0; 
-  //    const intervalId = setInterval(() => {
-  //      if(countInterval === 3) {
-  //        clearInterval(intervalId);
-  //      }    
-
-  //      countInterval++;   
-  //    }, 30)
   }  
 }
 
