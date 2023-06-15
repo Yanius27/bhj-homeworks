@@ -9,21 +9,21 @@ document.getElementById("file").onchange = function() {
 };
 
 form.addEventListener('submit', (e)=> {
+  e.preventDefault();
   const formData = new FormData(form);
   const xhr = new XMLHttpRequest();
+
+  xhr.upload.addEventListener('progress', (event)=> { 
+    const percentLoad = event.loaded / event.total;
+    progress.value = percentLoad;
+    if(percentLoad === 1) {
+      setTimeout(() => {
+        alert('Файл загружен');
+        location.reload();
+      }, 1000);
+    };
+  });
+
   xhr.open('POST', 'https://students.netoservices.ru/nestjs-backend/upload');
   xhr.send(formData);
-
-  xhr.addEventListener('load', ()=> {
-    const timerId = setInterval(() => {
-      progress.value += 0.005;
-      if(xhr.readyState === xhr.DONE && progress.value === 1) {
-        clearInterval(timerId);
-        alert('Документ загружен!');
-        location.reload();
-      }
-    }, 10);
-   
-  });
-  e.preventDefault();
 });
