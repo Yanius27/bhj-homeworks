@@ -24,10 +24,10 @@
                 <h2 class="title">Вход</h2>
                 <form action="https://students.netoservices.ru/nestjs-backend/auth" id="signin__form">
                     <div class="row">
-                        <input type="text" name="login" class="control" placeholder="Логин">
+                        <input type="text" name="login" class="control" placeholder="Логин" required>
                     </div>
                     <div class="row">
-                        <input type="password" name="password" class="control" placeholder="Пароль">
+                        <input type="password" name="password" class="control" placeholder="Пароль" required>
                     </div>
                     <div class="row">
                         <button class="btn" id="signin__btn">Войти</button>
@@ -38,7 +38,8 @@
                 Добро пожаловать, пользователь #<span id="user_id"></span>
             </div>
         </div>
-        </main>
+        <button class="exitbtn" id="exitBtn">Выйти</button>
+    </main>
     <script src="task.js"></script>
 </body>
 </html>
