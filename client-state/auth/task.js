@@ -36,7 +36,7 @@ form.addEventListener('submit', (e)=> {
       }
       else {
         alert('Неверный логин/пароль');
-        inputs.forEach(el => el.value = '');
+        form.reset();
       }
     }
   });
@@ -44,5 +44,8 @@ form.addEventListener('submit', (e)=> {
 
 exitBtn.addEventListener('click', ()=> {
   localStorage.clear();
-  location.reload();
+  welcome.classList.remove('welcome_active');
+  formContainer.classList.add('signin_active');
+  exitBtn.classList.remove('exitbtn_active');
+  form.reset();
 });
